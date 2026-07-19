@@ -59,9 +59,9 @@ p{
 }
 img{
     border-radius: 10px;
-    box-shadow: 10px;
     border-color: rgb(216, 112, 112);
 }
+
 ol{
     display: flex;
     justify-content: space-around;

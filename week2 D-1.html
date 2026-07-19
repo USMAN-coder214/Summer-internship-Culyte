@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let Vs Const</title>
+</head>
+<body>
+    <script>
+       //VARIABLES LET VS CONST
+
+       //LET
+       // let is a variable in javascrift , we use this for storing a data .
+       // it is blocked scoped mean if we declered a variable inside a { } block ,
+       //we cannot access it from outside 
+       let name= "Usman khan"
+       let b= 10;
+       b=20;
+        
+       console.log(name);
+       console.log(b)
+       
+       //Output : Usman 20
+
+       //CONST
+       //it is blocked scope 
+       //Cannot be reassigned 
+       //Cannot be redecleard
+
+       const user = { name: "Usman" };
+        user.name = "Ali";
+        console.log(user);
+
+        //Example
+        //This example show us we can change , modify , Add/delete  , but cannot reassigned and redecleared 
+        const colors = ["Red", "Blue"];
+
+        colors.push("Green");
+
+        console.log(colors);
+
+
+      
+   
+    </script>
+</body>
+</html>
