@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <script>
+      //Regular function
+      function sub(a, b) {
+        return a - b;
+      }
+      console.log(sub(10, 5));
+
+      //Arrow function
+      const subt = (a, b) => {
+        return a - b;
+      };
+      console.log(subt(10, 7));
+
+      //Arrow function
+      const name = (name) => {
+        return `Hello ${name}`;
+      };
+      console.log(name("Usman"));
+
+      //Arrow function to check the student is fail or pass
+      const checkResult = (marks) => {
+        if (marks >= 50) {
+          return "Pass";
+        }
+
+        return "Fail";
+      };
+
+      console.log(checkResult(75));
+      console.log(checkResult(40));
+    </script>
+  </body>
+</html>
