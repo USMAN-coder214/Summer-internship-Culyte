@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      // What is Destructuring?
+
+      // Destructuring is a JavaScript feature that lets you extract values from
+      // objects or arrays and store them in variables.
+
+      // Instead of writing many lines of code, you can write one clean line.
+
+      //Programm on Destructuring
+      const user = {
+        name: "Usman",
+        lname: "Khan",
+        age: 20,
+        email: "Uk@gmail.com",
+
+        fullname: function (fname,lname) {
+          return `Hello ${fname} ${lname}`;
+        },
+      };
+      let { name, lname, age, email, fullname } = user;
+      console.log(name);
+      console.log(lname);
+      console.log(age);
+      console.log(email);
+      console.log(user.fullname("Ali","Khan"));
+
+      // //Programm for Array
+      const fruitlist =["Banana","Apple","Grapes","Orange"]
+      fruitlist.push("Mango")
+      let [B,A,G,O,M]=fruitlist;
+
+      console.log(B)
+      console.log(A)
+      console.log(G)
+      console.log(O)
+      console.log(M)
+
+      // //Rest operator
+      function sum(name,...args){
+        console.log(name);
+        console.log(arguments);
+
+      let sum=0;
+      for(let i in args){
+        sum =sum+args[i]
+      }
+      console.log(sum);
+
+      }
+      sum("Usman khan", 30,30,30)
+      sum("Ali khan",45,55)
+
+      //spread operator
+      const users = {
+        name: "Usman",
+        age: 20,
+      };
+
+      const updatedUser = {
+        ...users,
+        city: "Peshawar",
+      };
+
+      console.log(updatedUser);
+    </script>
+  </body>
+</html>
