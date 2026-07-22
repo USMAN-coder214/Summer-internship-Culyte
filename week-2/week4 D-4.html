@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+    <script>
+    //   .map()
+    //   What does .map() do?
+    //   It creates a new array by performing an operation on every element of the original array.
+
+    //   Think of it like this:
+    //   Original Array
+    //           │
+    //           ▼
+    //   Perform an operation on each item
+    //           │
+    //           ▼
+    //   New Array
+
+        //Map
+        const numbers = [10, 20, 30];
+        const result = numbers.map((num) => {
+          return num * 2;
+        });
+        console.log(result);
+
+        //Map
+        const names = ["Ali", "Usman", "Ahmed"];
+        const res = names.map((name) => {
+          return name.toUpperCase();
+        });
+        console.log(res);
+
+        //Map
+        const products = [
+          { name: "Shoes", price: 50 },
+          { name: "Bag", price: 80 },
+          { name: "Watch", price: 100 },
+        ];
+
+        const resl = products.map((product) => {
+          return product.name;
+        });
+        console.log(resl);
+
+    //   What does .filter() do?
+
+    //   .filter() creates a new array containing only the elements that satisfy a condition.
+    //   Think of it like a security guard:
+    //   People → 🚪 Security Check → Allowed People
+    //   Only the people who meet the condition are allowed through.
+
+    //   Filter  with Array
+          const numbe = [5, 10, 15, 20, 25];
+          const resssss=numbe.filter((num)=>{
+              return num > 15
+          })
+          console.log(resssss);
+
+          //Filter with Array
+          const fruits = ["Apple", "Kiwi", "Banana", "Fig"];
+          const reslsss=fruits.filter((fruit)=>{
+              return fruit.length > 3;
+          });
+          console.log(reslsss);
+
+          //Filter with object
+          const students = [
+          { name: "Ali", marks: 45 },
+          { name: "Usman", marks: 80 },
+          { name: "Ahmed", marks: 65 },
+          { name: "Sara", marks: 30 }
+      ];
+         const resultsss=students.filter((student)=>{
+          return student.marks > 50;
+         })
+         console.log(resultsss);
+
+    //   .find()?
+    //   .find() is used to find the first element that matches a condition.
+
+            //   //Find with Array
+            const numberss = [5, 10, 15, 20];
+            const ress = numberss.find((number) => {
+              return number > 10;
+            });
+            console.log(ress);
+
+            //Find with Array
+            const fruitss = ["Apple", "Kiwi", "Banana", "Fig"];
+            const resls = fruitss.find((fruit) => {
+              return fruit.length < 5;
+            });
+            console.log(resls);
+
+            //.find with object
+            const productss = [
+              { name: "Shoes", price: 50 },
+              { name: "Bag", price: 80 },
+              { name: "Watch", price: 100 },
+            ];
+            const resu = productss.find((product) => {
+              return product.price >= 80;
+            });
+            console.log(resu);
+
+      // //.reduce()
+      // //Purpose:
+      // //reduce() takes all array values and reduces them into one single value.
+
+      // //Sum of Numbers
+      const values = [10, 20, 30, 40];
+
+      const total = values.reduce((sum, number) => {
+        return sum + number;
+      }, 0);
+
+      console.log(total);
+
+      // .some()
+      // Purpose:
+      // Checks if at least one element satisfies a condition.
+
+      // Returns:
+      // true
+      // false
+      const value = [5, 10, 15, 20];
+      const results = value.some((number) => number > 18);
+      console.log(results);
+
+      // .every()
+      // Purpose:
+      // Checks if all elements satisfy a condition.
+      // Returns:
+      // true
+      // false
+      const Value = [10, 20, 30, 40];
+
+      const resultss = Value.every((number) => number > 5);
+
+      console.log(resultss);
+    </script>
+  </body>
+</html>
