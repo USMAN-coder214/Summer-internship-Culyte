@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure function</title>
+</head>
+<body>
+    <script>
+
+       //Closure function
+       // "A closure lets a function remember variables from its outer function
+       // even after the outer function has finished."
+        function outer() {
+    let name = "Usman";
+    console.log("Outer function");
+    
+
+    function inner() {
+        console.log(name);
+        console.log("Inner function");
+        
+    }
+
+    inner();
+}
+
+outer();
+//
+function counter() {
+    let count = 0;
+    console.log("4 hi");
+    
+
+    return function () { 
+        count++;
+        console.log(count);
+    };
+}
+
+const c1 = counter();
+const c2 = counter();
+
+c1();
+c1();
+c2();
+c1();
+
+    // Practice: given a raw array of objects, write functions to filter, transform, and search it — plain JS, no React yet
+    const products = [
+  { id: 1, name: "Laptop", category: "Electronics", price: 700, stock: 5 },
+  { id: 2, name: "Mouse", category: "Electronics", price: 2000, stock: 20 },
+  { id: 3, name: "Shoes", category: "Fashion", price: 5000, stock: 0 },
+  { id: 4, name: "Keyboard", category: "Electronics", price: 4000, stock: 10 },
+];
+
+  //For filtering
+     const res=products.filter((product)=>{
+        return product.price > 3000
+     })
+     console.log(res);
+     
+  //For Transforming 
+   const resu=products.map((trans)=>{
+     return trans.price - 1000
+   })
+   console.log(resu);
+
+   //For searching 
+   const result =products.find((less)=>{
+    return less.price > 4000
+   })
+   console.log(result);
+   
+   
+   //Checkpoint
+   //✅ Checkpoint: can destructure a nested object, update an object immutably with spread, and transform an
+   //array with .map() without looking anything up.
+   const user={
+    name:"Usman",
+    age:20,
+    address:{
+        city:"Peshawar",
+        country:"Pakistan"
+    }
+   }
+   let {name,age,address}=user;
+   console.log(name);
+   console.log(age);
+   console.log(address);
+   
+   const updateuser={
+    ...user,
+    age:21,
+    profession:"Frontend Developer"
+   }
+   console.log(updateuser);
+   
+
+     
+    </script>
+</body>
+</html>
