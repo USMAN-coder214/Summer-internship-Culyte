@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <script>
+      // The Problem: JavaScript runs synchronously (line-by-line) on a single thread.
+      // When making a network request across the internet, your app can't freeze while
+      // waiting for the server to reply.
+      // The Tool:
+      // A Promise represents a value that isn't
+      //  available yet, but will be in the future (Pending → Fulfilled or Rejected).
+      //  async/await is syntactic sugar over Promises that allows us to write asynchronous
+      //  code that reads sequentially like synchronous code.
+
+     // Task on Promise and async/await
+      function delayMessage(msg, delay) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(`Message : ${delay}`);
+          }, delay);
+        });
+      }
+      async function runtest() {
+        const result = await delayMessage("Hello Mentor", 2000);
+        console.log(result);
+      }
+      runtest();
+
+      //Task on promise.all async/await
+      function delayMessage(msg, delay) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(`Done: ${msg}`);
+          }, delay);
+        });
+      }
+
+      async function runParallelTasks() {
+        console.time("Timer");
+
+        const p1 = delayMessage("Task 1", 1000); // 1 second delay
+        const p2 = delayMessage("Task 2", 3000); // 3 seconds delay
+        const p3 = delayMessage("Task 3", 2000); // 2 seconds delay
+
+        const results = await Promise.all([p1, p2, p3]);
+
+        console.log(results);
+        console.timeEnd("Timer");
+      }
+
+      runParallelTasks();
+    </script>
+  </body>
+</html>
