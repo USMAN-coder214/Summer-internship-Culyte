@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optional Chaining</title>
+  </head>
+  <body>
+    <script>
+      // Optional chaining (?.)
+
+      // Protects you from accessing a property that does not exist.
+
+      // Example:
+
+      // user.profile?.city
+
+      // Meaning:
+
+      // If profile exists, get city; otherwise return undefined.
+
+      // Nullish coalescing (??)
+
+      // Provides a default value when the result is:
+
+      // undefined
+      // null
+
+      // Example:
+
+      // city ?? "Unknown"
+
+      const user = {
+        name: "Usman",
+        email: "usman@gmail.com",
+        profile: {
+          bio: "Frontend Developer",
+        },
+      };
+      console.log(user.profile?.city ?? "city not exist");
+
+      //
+      const users = {
+        name: "Usman",
+        age: null,
+      };
+      console.log(users.age);
+
+      console.log(users.profile ?? "not exist");
+    </script>
+  </body>
+</html>
