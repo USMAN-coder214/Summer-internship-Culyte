@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON</title>
+  </head>
+  <body>
+    <script>
+      // What is JSON?
+      // Let's start with a real-life example.
+
+      // Imagine you wrote your personal information on paper.
+
+      // Name: Usman
+      // Age: 20
+      // Country: Pakistan
+
+      // This information is organized in a standard format.
+      // Similarly, computers need a standard format to exchange data.
+      // That format is called JSON.
+      // JSON = JavaScript Object Notation
+      // Even though it has "JavaScript" in its name, many programming languages use JSON.
+
+      // JSON.stringify
+      // It Conver javascrift object to a string which is called JSON.
+      //Servers don't understand JavaScript objects.
+      //They understand JSON text.
+      //That's why we convert:
+
+      const user = {
+        name: "Ali",
+        age: 22,
+      };
+
+      const result = JSON.stringify(user);
+
+      console.log(result);
+      // Output : {"name":"Ali","age":22}
+
+      //Json.Parse 
+      //JSON.parse() means:
+                      //  Take a JSON string and convert it back into a JavaScript object.
+
+// Real-Life Example 📦
+
+// Imagine the server sends you this:
+
+// '{"name":"Usman","age":20}'
+
+// Can you write:
+
+// console.log(data.name);
+
+// ❌ No.
+
+// Because this is just text (a string).
+// First, JavaScript must convert it into an object.
+// That's exactly what JSON.parse() does.   
+
+//Example
+const jsonData = '{"name":"Usman","age":20}';
+
+const users = JSON.parse(jsonData);
+
+console.log(users);
+
+//Output now we can use this is a object{ name: "Usman", age: 20}
+
+    </script>
+    
+  </body>
+</html>

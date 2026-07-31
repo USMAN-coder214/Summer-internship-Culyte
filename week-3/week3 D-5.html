@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Immutable</title>
+  </head>
+  <body>
+    <script>
+      // Immutability — Why We Never Mutate State Directly
+      // What is Immutability?
+
+      // Immutability means:
+
+      // Do not change the original data. Instead, create a new copy with the changes.
+      // In JavaScript, objects and arrays are mutable by default, but in React we follow an immutable approach.
+      // Why do we need immutability?
+
+      // Imagine you're editing a Microsoft Word document.
+
+      // There are two ways:
+
+      // Method 1: Change the original document
+      // Resume.docx
+
+      // ↓
+
+      // Edit the same file
+      // If you make a mistake, you can't compare it to the original.
+
+      // Object
+      const user = {
+        name: "Usman",
+        age: 20,
+      };
+
+      const updatedUser = {
+        ...user,
+        age: 21,
+      };
+
+      console.log(updatedUser);
+
+      //Array
+      const numbers = [1, 2, 3];
+
+      const updatedNumbers = [...numbers, 4];
+
+      console.log(updatedNumbers);
+
+      //Nested object
+      const users = {
+        name: "Usman",
+        address: {
+          city: "Peshawar",
+          country: "Pakistan",
+        },
+      };
+      const updatedUsers = {
+        ...users,
+        address: {
+          ...user.address,
+          city: "Islamabad",
+        },
+      };
+
+      console.log(updatedUsers);
+
+
+      //High order function
+      function sayBye(name) {
+    console.log("Bye " + name);
+}
+
+function execute(callback) {
+    callback("Ali");
+}
+
+execute(sayBye);
+    </script>
+  </body>
+</html>
