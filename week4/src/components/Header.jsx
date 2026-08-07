@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header>
+    <header className="bg-red-50">
       <h1>User Directory</h1>
       <p>Week 4 React practice project</p>
     </header>
