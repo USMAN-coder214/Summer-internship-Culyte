@@ -13,7 +13,7 @@ import TailwindPage from "./components/TailwindPage";
 
 
 
-//cd "summer-internship-culyte\week4"
+//cd "summer-internship-culyte\week-4"
 function App() {
   const users = [
     {
