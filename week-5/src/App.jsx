@@ -1,3 +1,5 @@
+import HookForm from "./React-Hook-Zod2"
+import ShadcnPractice from "./ShadcnPractice3"
 import Parent from "./StudentParent1"
 import ToggleMessage from "./ToggleMessage"
 import Search from "./UseDebounce"
@@ -10,7 +12,11 @@ function App() {
     {/* these two Day-1 */}
      {/* <ToggleMessage/> */}
      {/* <Search/> */}
-     <Parent/>
+     {/* <Parent/> */}
+      {/* These  for Day-2 */}
+      {/* <HookForm/> */}
+      {/* Day-3 */}
+      <ShadcnPractice/>
     </>
   )
 }

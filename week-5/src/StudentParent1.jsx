@@ -11,4 +11,4 @@ function Parent(){
         </>
     )
 }
-export default Parent;
+export default Parent; 
