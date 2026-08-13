@@ -1,8 +1,12 @@
+import PostApi from "./PostApi4"
 import HookForm from "./React-Hook-Zod2"
 import ShadcnPractice from "./ShadcnPractice3"
 import Parent from "./StudentParent1"
 import ToggleMessage from "./ToggleMessage"
 import Search from "./UseDebounce"
+
+
+
 //cd "summer-internship-culyte\week-5"
 function App() {
   
@@ -16,7 +20,10 @@ function App() {
       {/* These  for Day-2 */}
       {/* <HookForm/> */}
       {/* Day-3 */}
-      <ShadcnPractice/>
+      {/* <ShadcnPractice/> */}
+      {/* Day-4 */}
+      <PostApi/>
+
     </>
   )
 }
