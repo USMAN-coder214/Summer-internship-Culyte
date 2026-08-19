@@ -6,9 +6,9 @@ import { useState } from "react";
 function PostApi() {
   const [loading, setLoading] = useState(false);
   const schema = z.object({
-    name: z.string().min(1, "Name is required"),
-    email: z.string().email("Enter a valid email "),
-    password: z.string().min(6, "Enter a Passwords"),
+    name: z.string().min(1,"Name is required"),
+    email: z.string().email("Enter a valid email"),
+    password: z.string().min(6,"Enter a Password"),
   });
 
   const {
@@ -68,7 +68,6 @@ function PostApi() {
       <button
         className="rounded-md bg-black px-4 py-2 text-white"
         type="submit"
-        //onClick={sendData}
         disabled={loading}
       >
         {loading ? "Submitting..." : "Submit"}
