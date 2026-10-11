@@ -20,7 +20,17 @@ const createCategory = async (name, description) => {
 
   return category;
 };
+// Get all material categories
+const getCategories = async () => {
+  const categories = await MaterialCategory.findAll({
+    order: [['id', 'DESC']]
+  });
+
+  return categories;
+};
+
 
 module.exports = {
-  createCategory
+  createCategory,
+  getCategories
 };

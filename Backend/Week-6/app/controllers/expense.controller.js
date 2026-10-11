@@ -14,6 +14,43 @@ const createExpense = async (req, res) => {
       notes
     } = req.body;
 
+    // Validate required fields
+if (
+  !projectId ||
+  !category ||
+  !description ||
+  amount === undefined ||
+  !expenseDate
+) {
+  return res.status(400).json({
+    message:
+      'projectId, category, description, amount and expenseDate are required'
+  });
+}
+
+// Validate projectId
+if (!Number.isInteger(Number(projectId))) {
+  return res.status(400).json({
+    message: 'projectId must be a valid integer'
+  });
+}
+
+// Validate amount
+if (Number(amount) <= 0 || isNaN(Number(amount))) {
+  return res.status(400).json({
+    message: 'amount must be a positive number'
+  });
+}
+
+// Validate expense date
+const ParsedExpenseDate = new Date(expenseDate);
+
+if (isNaN(ParsedExpenseDate.getTime())) {
+  return res.status(400).json({
+    message: 'expenseDate must be a valid date'
+  });
+}
+
     const expense = await expenseService.createExpense(
       userId,
       projectId,

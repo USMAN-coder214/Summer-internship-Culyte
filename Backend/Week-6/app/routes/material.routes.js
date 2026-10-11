@@ -6,5 +6,9 @@ const router = express.Router();
 
 // Create a material — requires login
 router.post('/', authenticate, materialController.createMaterial);
-
+router.get(
+  '/',
+  authenticate,
+  materialController.getMaterials
+);
 module.exports = router;

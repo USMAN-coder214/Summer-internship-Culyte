@@ -55,11 +55,11 @@ const login = async (email, password) => {
   }
 
   // Create a JWT containing the user's ID
-  const token = jwt.sign(
-    { userId: user.id },
-    'culyte-secret-key',
-    { expiresIn: '1d' }
-  );
+ const token = jwt.sign(
+  { userId: user.id },
+  process.env.JWT_SECRET,
+  { expiresIn: '1d' }
+);
 
   // Return the user and token
   return {

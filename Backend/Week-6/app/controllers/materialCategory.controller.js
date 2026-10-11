@@ -6,6 +6,13 @@ const createCategory = async (req, res) => {
     // Get category data from the request body
     const { name, description } = req.body;
 
+    // Validate category name
+ if (!name || typeof name !== 'string' || !name.trim()) {
+  return res.status(400).json({
+    message: 'name is required and must be a valid text value'
+  });
+ }
+
     // Send the data to the service layer
     const category = await materialCategoryService.createCategory(
       name,
@@ -29,6 +36,25 @@ const createCategory = async (req, res) => {
   }
 };
 
+// Get all material categories
+const getCategories = async (req, res) => {
+  try {
+    const categories =
+      await materialCategoryService.getCategories();
+
+    res.status(200).json({
+      message: 'Material categories retrieved successfully',
+      categories
+    });
+
+  } catch (error) {
+    res.status(400).json({
+      message: error.message
+    });
+  }
+};
+
 module.exports = {
-  createCategory
+  createCategory,
+  getCategories
 };

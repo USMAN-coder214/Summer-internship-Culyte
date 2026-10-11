@@ -13,6 +13,57 @@ const addProjectMaterial = async (req, res) => {
       notes
     } = req.body;
 
+    // Validate required fields
+if (
+  !projectId ||
+  !materialId ||
+  quantity === undefined ||
+  unitPrice === undefined ||
+  !purchaseDate
+) {
+  return res.status(400).json({
+    message:
+      'projectId, materialId, quantity, unitPrice and purchaseDate are required'
+  });
+}
+
+// Validate projectId
+if (!Number.isInteger(Number(projectId))) {
+  return res.status(400).json({
+    message: 'projectId must be a valid integer'
+  });
+}
+
+// Validate materialId
+if (!Number.isInteger(Number(materialId))) {
+  return res.status(400).json({
+    message: 'materialId must be a valid integer'
+  });
+}
+
+// Validate quantity
+if (Number(quantity) <= 0 || isNaN(Number(quantity))) {
+  return res.status(400).json({
+    message: 'quantity must be a positive number'
+  });
+}
+
+// Validate unitPrice
+if (Number(unitPrice) <= 0 || isNaN(Number(unitPrice))) {
+  return res.status(400).json({
+    message: 'unitPrice must be a positive number'
+  });
+}
+
+// Validate purchase date
+const purchase = new Date(purchaseDate);
+
+if (isNaN(purchase.getTime())) {
+  return res.status(400).json({
+    message: 'purchaseDate must be a valid date'
+  });
+}
+
     const projectMaterial =
       await projectMaterialService.addProjectMaterial(
         userId,

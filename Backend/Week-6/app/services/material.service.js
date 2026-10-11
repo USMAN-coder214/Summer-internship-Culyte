@@ -37,7 +37,21 @@ const createMaterial = async (
 
   return material;
 };
+const getMaterials = async () => {
+  const materials = await Material.findAll({
+    include: [
+      {
+        model: MaterialCategory,
+        attributes: ['id', 'name']
+      }
+    ],
+    order: [['id', 'DESC']]
+  });
+
+  return materials;
+};
 
 module.exports = {
-  createMaterial
+  createMaterial,
+  getMaterials
 };

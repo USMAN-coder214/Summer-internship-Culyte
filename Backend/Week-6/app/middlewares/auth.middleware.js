@@ -19,9 +19,9 @@ const authenticate = (req, res, next) => {
 
     // Verify the token and decode its payload
     const decoded = jwt.verify(
-      token,
-      'culyte-secret-key'
-    );
+  token,
+  process.env.JWT_SECRET
+);
 
     // Store the authenticated user's ID on the request
     req.userId = decoded.userId;

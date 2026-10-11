@@ -7,4 +7,10 @@ const router = express.Router();
 // Create a material category — requires login
 router.post('/', authenticate, materialCategoryController.createCategory);
 
+router.get(
+  '/',
+  authenticate,
+  materialCategoryController.getCategories
+);
+
 module.exports = router;

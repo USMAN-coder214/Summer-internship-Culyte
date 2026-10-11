@@ -28,6 +28,11 @@ Project.hasMany(models.ProjectWorker, {
   foreignKey: 'projectId',
   onDelete: 'CASCADE'
 });
+// One project can have many tasks
+Project.hasMany(models.Task, {
+  foreignKey: 'projectId',
+  onDelete: 'CASCADE'
+});
     }
   }
   Project.init({

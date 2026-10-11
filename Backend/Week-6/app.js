@@ -1,3 +1,18 @@
+process.on("exit", (code) => {
+  console.log("NODE PROCESS EXITED WITH CODE:", code);
+});
+
+process.on("uncaughtException", (error) => {
+  console.error("UNCAUGHT EXCEPTION:", error);
+});
+
+process.on("unhandledRejection", (error) => {
+  console.error("UNHANDLED REJECTION:", error);
+});
+
+
+require('dotenv').config();
+
 const express = require('express');
 const cors = require('cors');
 
@@ -12,6 +27,7 @@ const projectMaterialRoutes = require('./app/routes/projectMaterial.routes');
 const expenseRoutes = require('./app/routes/expense.routes');
 const workerRoutes = require('./app/routes/worker.routes');
 const projectWorkerRoutes = require('./app/routes/projectWorker.routes');
+const taskRoutes = require('./app/routes/task.routes');
 
 const app = express();
 
@@ -31,6 +47,7 @@ app.use('/api/project-materials', projectMaterialRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/workers', workerRoutes);
 app.use('/api/project-workers', projectWorkerRoutes);
+app.use('/api/tasks', taskRoutes);
 
 
 // Simple test route
@@ -41,8 +58,8 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
