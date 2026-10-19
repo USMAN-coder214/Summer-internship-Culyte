@@ -11,6 +11,18 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 config.dialectModule = mysql2;
+if (env === 'production') {
+  config.dialectOptions = {
+    ...config.dialectOptions,
+    ssl: {
+      ca: fs.readFileSync(
+        path.join(__dirname, '../config/ca.pem'),
+        'utf8'
+      ),
+      rejectUnauthorized: true
+    }
+  };
+}
 const db = {};
 
 let sequelize;
