@@ -31,6 +31,7 @@ Worker.hasMany(models.ProjectWorker, {
   }, {
     sequelize,
     modelName: 'Worker',
+    tableName: 'workers',
   });
   return Worker;
 };

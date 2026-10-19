@@ -28,6 +28,7 @@ Task.belongsTo(models.Project, {
   }, {
     sequelize,
     modelName: 'Task',
+    tableName: 'tasks',
   });
   return Task;
 };

@@ -33,6 +33,7 @@ ProjectWorker.belongsTo(models.Worker, {
   }, {
     sequelize,
     modelName: 'ProjectWorker',
+    tableName: 'projectworkers',
   });
   return ProjectWorker;
 };

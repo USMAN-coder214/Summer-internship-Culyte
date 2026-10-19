@@ -29,6 +29,7 @@ Material.hasMany(models.ProjectMaterial, {
   }, {
     sequelize,
     modelName: 'Material',
+    tableName: 'materials',
   });
   return Material;
 };

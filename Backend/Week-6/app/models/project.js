@@ -48,6 +48,7 @@ Project.hasMany(models.Task, {
   }, {
     sequelize,
     modelName: 'Project',
+    tableName: 'projects'
   });
   return Project;
 };

@@ -28,6 +28,7 @@ Expense.belongsTo(models.Project, {
   }, {
     sequelize,
     modelName: 'Expense',
+    tableName: 'expenses',
   });
   return Expense;
 };
