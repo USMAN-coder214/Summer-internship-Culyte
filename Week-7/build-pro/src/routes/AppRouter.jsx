@@ -133,7 +133,7 @@ function AppRouter() {
 
         {/* ================= FALLBACK ================= */}
 
-        <Route
+        {/* <Route
           path="*"
           element={
             <Navigate
@@ -141,7 +141,20 @@ function AppRouter() {
               replace
             />
           }
-        />
+        /> */}
+        
+{/* ================= DEFAULT & FALLBACK ================= */}
+
+<Route
+  path="/"
+  element={<Navigate to="/login" replace />}
+/>
+
+<Route
+  path="*"
+  element={<Navigate to="/login" replace />}
+/>
+
 
       </Routes>
     </BrowserRouter>
