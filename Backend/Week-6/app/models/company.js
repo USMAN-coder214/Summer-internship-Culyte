@@ -36,6 +36,7 @@ Company.hasMany(models.Worker, {
   }, {
     sequelize,
     modelName: 'Company',
+    tableName: 'companies',
   });
   return Company;
 };
