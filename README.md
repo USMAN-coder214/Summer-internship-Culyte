@@ -155,18 +155,28 @@ Use the sign-up or login screen to access the application. Request demo credenti
 
 ### Screenshots
 
-Add real application screenshots after creating a `docs/screenshots/` directory:
 
-- `docs/screenshots/login.png`
-- `docs/screenshots/dashboard.png`
-- `docs/screenshots/projects.png`
-- `docs/screenshots/materials.png`
-- `docs/screenshots/expenses.png`
+## 📸 Application Screenshots
 
-For example, once a screenshot has been added:
+### Dashboard
+![Build-Pro Dashboard](screenshots/dashboard.png)
 
-```markdown
-![Build-Pro dashboard](docs/screenshots/dashboard.png)
+### Projects
+![Project Management](screenshots/project.png)
+
+### Workers
+![Worker Management](screenshots/workers.png)
+
+### Tasks
+![Task Management](screenshots/tasks.png)
+
+### Materials
+![Materials Management](screenshots/materials.png)
+
+
+### Login
+![Login Screen](screenshots/login.png)
+
 ```
 
 ## Security notes
